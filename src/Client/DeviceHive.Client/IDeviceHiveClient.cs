@@ -39,7 +39,7 @@ namespace DeviceHive.Client
         /// </summary>
         /// <param name="filter">Device filter criteria.</param>
         /// <returns>A list of <see cref="Device"/> objects that match specified filter criteria.</returns>
-        Task<List<Device>> GetDevicesAsync(DeviceFilter filter = null);
+        Task<IEnumerable<Device>> GetDevicesAsync(DeviceFilter filter = null);
 
         /// <summary>
         /// Gets information about device.

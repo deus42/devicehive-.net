@@ -53,7 +53,8 @@ namespace DeviceHive.Droid
             DisplayInfo("Listing available devices...");
             try
             {
-                _devices = await _client.GetDevicesAsync();
+                _devices = (await _client.GetDevicesAsync()).ToList();
+                List<Device> test = new List<Device>();
             }
             catch (Exception ex)
             {

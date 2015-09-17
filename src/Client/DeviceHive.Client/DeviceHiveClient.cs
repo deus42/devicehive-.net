@@ -95,9 +95,9 @@ namespace DeviceHive.Client
         /// </summary>
         /// <param name="filter">Device filter criteria.</param>
         /// <returns>A list of <see cref="Device"/> objects that match specified filter criteria.</returns>
-        public async Task<List<Device>> GetDevicesAsync(DeviceFilter filter = null)
+        public async Task<IEnumerable<Device>> GetDevicesAsync(DeviceFilter filter = null)
         {
-            return await _restClient.GetAsync<List<Device>>("device" + RestClient.MakeQueryString(filter));
+            return await _restClient.GetAsync<IEnumerable<Device>>("device" + RestClient.MakeQueryString(filter));
         }
 
         /// <summary>
